@@ -1,20 +1,23 @@
 <script setup lang="ts">
 type Props = {
-  loading?: boolean;
+  text: string;
   disabled?: boolean;
+  loading?: boolean;
 };
-defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+  loading: false,
+  disabled: false,
+});
 </script>
 
 <template>
   <div class="text-center">
     <v-btn
-      :loading="!!loading"
-      :disabled="!!disabled"
+      :loading="props.loading"
+      :disabled="props.disabled"
       color="primary"
       class="text-capitalize"
-    >
-      <slot />
-    </v-btn>
+      :text="props.text"
+    />
   </div>
 </template>

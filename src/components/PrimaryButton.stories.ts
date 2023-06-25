@@ -6,10 +6,12 @@ const meta: Meta<typeof PrimaryButton> = {
   title: "Example/PrimaryButton",
   component: PrimaryButton,
   argTypes: {
+    text: { control: "text" },
     loading: { control: "boolean" },
     disabled: { control: "boolean" },
   },
   args: {
+    text: "Button",
     loading: false,
     disabled: false,
   },
@@ -18,9 +20,16 @@ export default meta;
 
 type Story = StoryObj<typeof PrimaryButton>;
 
-export const Default: Story = {
-  render: () => ({
-    components: { PrimaryButton },
-    template: "<PrimaryButton>Default</PrimaryButton>",
-  }),
+export const Default: Story = {};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    loading: true,
+  },
 };
