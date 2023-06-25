@@ -3,7 +3,6 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import PrimaryButton from "@/components/PrimaryButton.vue";
 
 const meta: Meta<typeof PrimaryButton> = {
-  title: "Example/PrimaryButton",
   component: PrimaryButton,
   argTypes: {
     text: { control: "text" },
