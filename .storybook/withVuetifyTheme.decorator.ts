@@ -1,9 +1,9 @@
 import { VApp } from "vuetify/components";
-import { Decorator, StoryContext } from "@storybook/vue3";
+import { Decorator } from "@storybook/vue3";
 
 export const DEFAULT_THEME = "light";
 
-export const withVuetifyTheme: Decorator = (story, context: StoryContext) => {
+export const withVuetifyTheme: Decorator = (story, context) => {
   const globalTheme = context.globals.theme || DEFAULT_THEME;
   return {
     components: { story, VApp },
