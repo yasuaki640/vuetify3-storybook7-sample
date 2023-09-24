@@ -2,6 +2,7 @@ import type { Preview } from "@storybook/vue3";
 import { setup } from "@storybook/vue3";
 import { registerPlugins } from "../src/plugins";
 import { DEFAULT_THEME, withVuetifyTheme } from "./withVuetifyTheme.decorator";
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 setup((app) => {
   // Registers your app's plugins into Storybook
@@ -18,6 +19,7 @@ const preview: Preview = {
       },
     },
     layout: "fullscreen",
+    viewport: { viewports: INITIAL_VIEWPORTS },
   },
   globalTypes: {
     theme: {
