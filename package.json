@@ -11,7 +11,8 @@
     "format": "prettier --write src/",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_0e6ee2df389d960"
+    "chromatic": "npx chromatic --project-token=chpt_0e6ee2df389d960",
+    "storycap": "storycap --serverCmd \"npx http-server storybook-static -p 9001\" http://localhost:9001"
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
@@ -44,6 +45,7 @@
     "react-dom": "^18.2.0",
     "sass": "^1.60.0",
     "storybook": "^7.0.22",
+    "storycap": "^4.2.0",
     "typescript": "^5.0.0",
     "vite": "^4.2.0",
     "vite-plugin-vuetify": "^1.0.0",
