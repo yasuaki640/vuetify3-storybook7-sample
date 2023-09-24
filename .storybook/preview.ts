@@ -3,11 +3,21 @@ import { setup } from "@storybook/vue3";
 import { registerPlugins } from "../src/plugins";
 import { DEFAULT_THEME, withVuetifyTheme } from "./withVuetifyTheme.decorator";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { ScreenshotOptions } from "storycap/lib/shared/types";
+import { withScreenshot } from "storycap";
 
 setup((app) => {
   // Registers your app's plugins into Storybook
   registerPlugins(app);
 });
+
+const screenshot: ScreenshotOptions = {
+  viewports: [
+    "iPhone 11 Pro",
+    "iPhone 8 Plus landscape",
+    "Blackberry PlayBook landscape",
+  ],
+};
 
 const preview: Preview = {
   parameters: {
@@ -20,6 +30,7 @@ const preview: Preview = {
     },
     layout: "fullscreen",
     viewport: { viewports: INITIAL_VIEWPORTS },
+    screenshot,
   },
   globalTypes: {
     theme: {
@@ -38,7 +49,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [withVuetifyTheme],
+  decorators: [withVuetifyTheme, withScreenshot],
 };
 
 export default preview;
