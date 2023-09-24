@@ -12,11 +12,20 @@ setup((app) => {
 });
 
 const screenshot: ScreenshotOptions = {
-  viewports: [
-    "iPhone 11 Pro",
-    "iPhone 8 Plus landscape",
-    "Blackberry PlayBook landscape",
-  ],
+  viewports: {
+    mobile: {
+      width: 428,
+      height: 926,
+    },
+    tablet: {
+      width: 768,
+      height: 1024,
+    },
+    desktop: {
+      width: 1440,
+      height: 1024,
+    },
+  },
 };
 
 const preview: Preview = {
